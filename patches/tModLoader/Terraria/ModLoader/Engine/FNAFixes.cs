@@ -135,9 +135,9 @@ internal static class FNAFixes
 		}
 
 		// Append the default driver list, in case of an old or unsupported env var left on the system (See #2926)
-		if ((Environment.GetEnvironmentVariable(sdlHintName) ?? Environment.GetEnvironmentVariable(sdl3HintName)) is string envVarValue) {
-			Logging.FNA.Info($"Detected {sdlHintName}={envVarValue}. Appending default driver list as fallback: {defaultDriverString}");
-			SDL3.SDL.SDL_SetHintWithPriority(sdlHintName, $"{envVarValue},{defaultDriverString}", SDL3.SDL.SDL_HintPriority.SDL_HINT_OVERRIDE);
+		if ((Environment.GetEnvironmentVariable(sdl3HintName) ?? Environment.GetEnvironmentVariable(sdlHintName)) is string envVarValue) {
+			Logging.FNA.Info($"Using {sdl3HintName}={envVarValue}. Appending default driver list as fallback: {defaultDriverString}");
+			SDL3.SDL.SDL_SetHintWithPriority(sdl3HintName, $"{envVarValue},{defaultDriverString}", SDL3.SDL.SDL_HintPriority.SDL_HINT_OVERRIDE);
 		}
 	}
 }
