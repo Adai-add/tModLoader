@@ -4472,7 +4472,7 @@
  		}
  
  		bool flag2 = type == 19 && frameY / 18 == 49;
-+		if (TileLoader.HasWalkDust(type)) { } else
++		if (TileLoader.HasWalkDust(type, frameX, frameY)) { } else
  		if (!(type == 147 || type == 25 || type == 53 || type == 189 || flag2) && type != 0 && type != 123 && type != 57 && type != 112 && type != 116 && type != 196 && type != 193 && type != 195 && type != 197 && type != 199 && type != 229 && type != 234 && type != 371 && type != 460 && type != 666 && type != 712 && type != 717 && type != 718 && type != 719)
  			return;
  
@@ -4488,7 +4488,7 @@
  			if (type == 460)
  				newColor = new Color(100, 150, 130, 100);
  
-+			TileLoader.WalkDust(type, ref num3, ref flag3, ref newColor);
++			TileLoader.WalkDust(type, frameX, frameY, ref num3, ref flag3, ref newColor);
 +
  			if (!Falling) {
  				float num4 = Math.Abs(velocity.X) / 3f;

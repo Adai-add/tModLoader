@@ -635,6 +635,18 @@ public abstract class ModTile : ModTileOrWall
 	}
 
 	/// <summary>
+	/// Whether this tile creates dust when a player walks or lands on the supplied tile frame.
+	/// Returns <see cref="HasWalkDust()"/> by default.
+	/// <para/> Customize the dust using <see cref="WalkDust(int, int, ref int, ref bool, ref Color)"/>. The default dust is <see cref="DustID.Snow"/>.
+	/// </summary>
+	/// <param name="frameX">The selected floor tile's <see cref="Tile.TileFrameX"/> value, in pixels.</param>
+	/// <param name="frameY">The selected floor tile's <see cref="Tile.TileFrameY"/> value, in pixels.</param>
+	public virtual bool HasWalkDust(int frameX, int frameY)
+	{
+		return HasWalkDust();
+	}
+
+	/// <summary>
 	/// Allows you to modify the dust created when the player walks on this tile. The makeDust parameter is whether or not to make dust; you can randomly set this to false to reduce the amount of dust produced.
 	/// <para/> The default dust (<paramref name="dustType"/>) is <see cref="DustID.Snow"/>
 	/// </summary>
@@ -643,6 +655,18 @@ public abstract class ModTile : ModTileOrWall
 	/// <param name="color"></param>
 	public virtual void WalkDust(ref int dustType, ref bool makeDust, ref Color color)
 	{
+	}
+
+	/// <inheritdoc cref="WalkDust(ref int, ref bool, ref Color)"/>
+	/// <param name="frameX">The selected floor tile's <see cref="Tile.TileFrameX"/> value, in pixels.</param>
+	/// <param name="frameY">The selected floor tile's <see cref="Tile.TileFrameY"/> value, in pixels.</param>
+	/// <param name="dustType">The dust type to spawn.</param>
+	/// <param name="makeDust">Whether this dust should spawn.</param>
+	/// <param name="color">The dust color.</param>
+	/// <remarks>The default implementation calls <see cref="WalkDust(ref int, ref bool, ref Color)"/>.</remarks>
+	public virtual void WalkDust(int frameX, int frameY, ref int dustType, ref bool makeDust, ref Color color)
+	{
+		WalkDust(ref dustType, ref makeDust, ref color);
 	}
 
 	/// <summary>

@@ -774,6 +774,7 @@ All classes are in the `Terraria.ModLoader` or `Terraria` namespaces unless othe
 
 In addition to changes to existing features and adapting to vanilla changes, 1.4.5 tModLoader also contains several new features unrelated to vanilla changes.
 
+* `ModTile.HasWalkDust` and `ModTile.WalkDust` have new overloads accepting `frameX` and `frameY` to customize walking and landing dust by style. Existing overrides still work. See `ExampleWalkDustPlatform`.
 * `WallDefinition` added.
 * `ModItem.GetGolfClubProperties` added, as well as ExampleGolfClub.
 * Mod ratings are now displayed in the Mod Browser and mods can be rated from the Mods menu.

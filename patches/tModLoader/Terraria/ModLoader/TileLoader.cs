@@ -1325,9 +1325,19 @@ public static class TileLoader
 		return GetTile(type)?.HasWalkDust() ?? false;
 	}
 
+	public static bool HasWalkDust(int type, int frameX, int frameY)
+	{
+		return GetTile(type)?.HasWalkDust(frameX, frameY) ?? false;
+	}
+
 	public static void WalkDust(int type, ref int dustType, ref bool makeDust, ref Color color)
 	{
 		GetTile(type)?.WalkDust(ref dustType, ref makeDust, ref color);
+	}
+
+	public static void WalkDust(int type, int frameX, int frameY, ref int dustType, ref bool makeDust, ref Color color)
+	{
+		GetTile(type)?.WalkDust(frameX, frameY, ref dustType, ref makeDust, ref color);
 	}
 
 	public static void ChangeWaterfallStyle(int type, ref int style)

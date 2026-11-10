@@ -672,6 +672,16 @@ Mods: {
 				Tooltip: This is a modded platform.
 			}
 
+			ExampleWalkDustPlatform: {
+				DisplayName: Example Wood Dust Platform
+				Tooltip: Produces wood dust when walked on
+			}
+
+			ExampleSnowyWalkDustPlatform: {
+				DisplayName: Example Snow Dust Platform
+				Tooltip: The snowy style of the same tile produces snow dust
+			}
+
 			ExampleSink: {
 				DisplayName: Example Sink
 				Tooltip:
